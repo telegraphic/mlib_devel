@@ -19,7 +19,7 @@ xsgRel = '';
         end
     end
 
-    if nargin > 0 && strcmpi(arg, 'full')
+    if nargin > 0 && strcmpi(arg, 'FULL')
         toks=regexp(xsgRel, 'build\s*(\d+)', 'tokens');
         argout = [xsgVer, '.', toks{1}{1}];
     else

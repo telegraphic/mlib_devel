@@ -47,31 +47,33 @@ if nargin == 0  % LAUNCH GUI
     %get the Xilinx Sysgen version
     xsg = xlVersion;
 
-    try
-        xsg = strtok(xsg{1},' ');
-    catch
-        xsg = get_xlVersion('full');
-    end
+    %try
+    %    xsg = strtok(xsg{1},' ');
+    %catch
+    %    xsg = get_xlVersion('full');
+    %end
 
-    switch xsg
-        case {'8.2.02'}
-            set(handles.xsg_version,'String','8.2');
-        case {'9.1.01'}
-            set(handles.xsg_version,'String','9.1');
-        case {'10.1.1.1182'}
-            set(handles.xsg_version,'String','10.1');
-        case {'10.1.2.1250'}
-            set(handles.xsg_version,'String','10.1');
-        case {'10.1.3.1386'}
-            set(handles.xsg_version,'String','10.1');
-        case {'11.3.2055'}
-            set(handles.xsg_version,'String','11.3');
-        case {'11.4.2254'}
-            set(handles.xsg_version,'String','11.4');
-        otherwise
-            errordlg(['Unsupported Xilinx System Generator version: ',xsg]);
-            return;
-    end
+    %switch xsg
+    %    case {'8.2.02'}
+    %        set(handles.xsg_version,'String','8.2');
+    %    case {'9.1.01'}
+    %        set(handles.xsg_version,'String','9.1');
+    %    case {'10.1.1.1182'}
+    %        set(handles.xsg_version,'String','10.1');
+    %    case {'10.1.2.1250'}
+    %        set(handles.xsg_version,'String','10.1');
+    %    case {'10.1.3.1386'}
+    %        set(handles.xsg_version,'String','10.1');
+    %    case {'11.3.2055'}
+    %        set(handles.xsg_version,'String','11.3');
+    %    case {'11.4.2254'}
+    %        set(handles.xsg_version,'String','11.4');
+    %    otherwise
+    %        errordlg(['Unsupported Xilinx System Generator version: ',xsg]);
+    %        return;
+    %end
+
+set(handles.xsg_version,'String','13.4');
 
 elseif ischar(varargin{1}) % INVOKE NAMED SUBFUNCTION OR CALLBACK
 
@@ -173,6 +175,7 @@ end
 % --------------------------------------------------------------------
 function varargout = view_log_Callback(h, eventdata, handles, varargin)
 sys = get(handles.design_name,'String');
+fprintf(sys);
 view_choice = get(handles.log_menu,'Value');
 view_shortcuts = get(handles.log_menu,'String');
 

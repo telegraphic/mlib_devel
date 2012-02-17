@@ -118,7 +118,7 @@ end
 
 % cd into the design directory
 sys_file = get_param(sys,'FileName');
-[sys_dir, temp1, temp2, temp3] = fileparts(sys_file);
+[sys_dir, temp1, temp2] = fileparts(sys_file);
 cd(sys_dir);
 
 % comb for gateway in blocks that aren't part of a yellow block
